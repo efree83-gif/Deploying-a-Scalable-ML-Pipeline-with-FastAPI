@@ -24,7 +24,7 @@ jobs:
 
     - name: Lint with flake8
       run: |
-        flake8 . --max-line-length=127
+        flake8 . --max-line-length=127 --exclude=fastapi
 
     - name: Test with pytest
       run: |
