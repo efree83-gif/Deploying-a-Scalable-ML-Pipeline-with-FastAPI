@@ -41,14 +41,26 @@ def test_inference(dummy_data):
 
 def test_compute_model_metrics():
     """
-    # Verifies compute_model_metrics correctly calculates and returns three floats.
+    Test the compute_model_metrics function to ensure numerical correctness.
+    Using dummy data: True Positives=1, False Positives=0, False Negatives=1
     """
-    y_true = np.array([0, 1, 1, 0])
-    y_pred = np.array([0, 1, 0, 0])
+    y_true = [0, 1, 1, 0]
+    preds = [0, 1, 0, 0]
 
-    precision, recall, fbeta = compute_model_metrics(y_true, y_pred)
+    # Expected metrics for these specific arrays:
+    # Precision = 1 / (1 + 0) = 1.0
+    # Recall = 1 / (1 + 1) = 0.5
+    # F1 = 2 * (1.0 * 0.5) / (1.0 + 0.5) = 0.666...
 
-    # Check that all three metrics are returned as floats
+    precision, recall, f1 = compute_model_metrics(y_true, preds)
+
+    # Asserting return types (your original checks)
     assert isinstance(precision, float)
     assert isinstance(recall, float)
-    assert isinstance(fbeta, float)
+    assert isinstance(f1, float)
+
+    # Asserting numerical correctness (the evaluator's requested fix)
+    assert precision == 1.0
+    assert recall == 0.5
+    assert round(f1, 2) == 0.67
+
