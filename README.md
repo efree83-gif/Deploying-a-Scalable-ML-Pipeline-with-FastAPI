@@ -1,12 +1,14 @@
 # Deploying a Scalable ML Pipeline with FastAPI
 
+**Repository URL:** https://github.com/efree83-gif/Deploying-a-Scalable-ML-Pipeline-with-FastAPI
+
 A production-ready machine learning pipeline and RESTful API built with Python, Scikit-learn, and FastAPI, complete with automated CI/CD linting and testing via GitHub Actions.
 
 ## Project Overview
 This project trains a classification model on census data to predict whether income exceeds $50K/yr. The workflow includes:
 - Data cleaning and preprocessing pipelines.
 - Model training and serialization (`model.pkl`, `encoder.pkl`).
-- Sliced model performance evaluation.
+- Sliced model performance evaluation (`slice_output.txt`).
 - A RESTful FastAPI application for real-time model inference.
 - Automated CI/CD pipeline enforcing `flake8` linting and `pytest` execution on every push.
 
@@ -18,8 +20,10 @@ This project trains a classification model on census data to predict whether inc
 ├── data/                        # Dataset directory (census.csv)
 ├── ml/                          # Core ML code (data processing, training, model)
 ├── model/                       # Serialized model and encoder artifacts
+├── screenshots/                 # Required project screenshots (CI, unit tests, local API)
 ├── main.py                      # FastAPI application entry point
 ├── test_ml.py                   # Unit tests for ML functions and FastAPI endpoints
 ├── train_model.py               # Model training script
 ├── local_api.py                 # Script for local API integration testing
+├── model_card.md                # Model Card documentation
 └── requirements.txt             # Python package dependencies
