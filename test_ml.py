@@ -63,4 +63,3 @@ def test_compute_model_metrics():
     assert precision == 1.0
     assert recall == 0.5
     assert round(f1, 2) == 0.67
-
